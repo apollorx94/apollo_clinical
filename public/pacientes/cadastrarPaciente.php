@@ -18,7 +18,7 @@ require '../../config/conexaoBanco.php';
     $observacoes = $_POST['observacoes'];
 
     if (empty($nome) || empty($cpf) || empty($telefone) || empty($data_nascimento)) {
-        header('Location: cadastrar-paciente.php?status=erro');
+        header('Location: form-cadastrar-pacientes.php?status=erro');
         exit;
     }
 
@@ -51,16 +51,16 @@ require '../../config/conexaoBanco.php';
 
     $cadastraPaciente->execute();
 
-    header('Location: cadastrar-paciente.php?status=sucesso');
+    header('Location: form-cadastrar-pacientes.php?status=sucesso');
     exit;
 
 }   catch (PDOException $codigoBanco) {
     if ($codigoBanco->getCode() == '23505') {
-        header('Location: cadastrar-paciente.php?status=duplicado');
+        header('Location: form-cadastrar-pacientes.php?status=duplicado');
         exit;
     }
     error_log('Erro ao cadastrar paciente: ' . $codigoBanco->getMessage());
-    header('Location: cadastrar-paciente.php?status=erro');
+    header('Location: form-cadastrar-pacientes.php?status=erro');
     exit;
 }
 

@@ -74,7 +74,7 @@ $pacientes = $dadosPacientes->fetchAll();
                     <td><?php echo $paciente['data_nascimento']; ?></td>
                     <td><?php echo $paciente['convenio_nome']; ?></td>
                     <td>
-                        <a href="alterarPaciente.php?id=<?php echo $paciente['id'];?>"
+                        <a href="form-alterar-pacientes.php?id=<?php echo $paciente['id'];?>"
                             class="btn btn-warning btn-sm">Alterar</a>
                         <a href="excluirPaciente.php?id=<?php echo $paciente['id'];?>"
                             class=" btn btn-danger btn-sm">Excluir</a>

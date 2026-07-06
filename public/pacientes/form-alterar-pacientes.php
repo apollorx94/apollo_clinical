@@ -41,13 +41,6 @@ try {
 $dadosConvenio = $conexao->query("SELECT id, nome FROM convenios");
 $convenios = $dadosConvenio->fetchAll();
 
-$alterarPessoa = 'i' ; 
-
-
-$alterarPaciente = 'i';
-
-
-
 
 ?>
 <!DOCTYPE html>
@@ -94,7 +87,7 @@ $alterarPaciente = 'i';
             <h2 class="fw-bold"><i class="bi bi-person-add"></i> Edição de Paciente</h2>
             <p class="text-muted">Preencha os campos abaixo para o cadastro do paciente</p>
         </div>
-        <form action="cadastrarPaciente.php" method="post">
+        <form action="editarPaciente.php" method="post">
             <div class="mb-3">
                 <label class="form-label">Nome:</label>
                 <input type="text" name="nome" value="<?php echo $paciente['nome']; ?>" class="form-control">
@@ -187,7 +180,7 @@ $alterarPaciente = 'i';
                 <label class="form-label">Observações</label>
                 <textarea name="observacoes" class="form-control"><?php echo $paciente['observacoes']; ?></textarea>
             </div>
-            <button type="submit" class="btn btn-primary mb-3">Cadastrar</button>
+            <button type="submit" class="btn btn-primary mb-3">Salvar Alterações</button>
         </form>
     </div>
 </body>
