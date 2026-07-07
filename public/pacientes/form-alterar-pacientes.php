@@ -8,6 +8,7 @@ try {
     
     $alterarPaciente = $conexao->prepare("SELECT
         pac.id,
+        pes.id AS pessoa_id,
         pes.nome,
         pes.cpf,
         pes.email,
@@ -19,6 +20,7 @@ try {
         pes.bairro,
         pes.cidade,
         pes.uf,
+        pes.contato_emergencial,
         pac.observacoes,
         pac.convenio_id,
         pac.data_nascimento,
@@ -105,6 +107,11 @@ $convenios = $dadosConvenio->fetchAll();
                 <input type="email" name="email" value="<?php echo $paciente['email']; ?>" class="form-control">
             </div>
             <div class="mb-3">
+                <label class="form-label"><strong>Contato de Emergencia</strong></label>
+                <input type="text" name="contato_emergencial" value="<?php echo $paciente['contato_emergencial']; ?>"
+                    class="form-control">
+            </div>
+            <div class="mb-3">
                 <label class="form-label">Data de Nascimento:</label>
                 <input type="date" name="data_nascimento" value="<?php echo $paciente['data_nascimento']; ?>"
                     class="form-control">
@@ -180,6 +187,8 @@ $convenios = $dadosConvenio->fetchAll();
                 <label class="form-label">Observações</label>
                 <textarea name="observacoes" class="form-control"><?php echo $paciente['observacoes']; ?></textarea>
             </div>
+            <input type="hidden" name="id_paciente" value="<?php echo $paciente['id']; ?>">
+            <input type="hidden" name="id_pessoa" value="<?php echo $paciente['pessoa_id']; ?>">
             <button type="submit" class="btn btn-primary mb-3">Salvar Alterações</button>
         </form>
     </div>

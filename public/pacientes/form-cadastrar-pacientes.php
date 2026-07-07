@@ -68,6 +68,10 @@ $convenios = $dadosConvenio->fetchAll();
                 <input type="email" name="email" class="form-control">
             </div>
             <div class="mb-3">
+                <label class="form-label"><strong>Contato de Emergencia:</strong></label>
+                <input type="text" name="contato_emergencial" class="form-control">
+            </div>
+            <div class="mb-3">
                 <label class="form-label">Data de Nascimento:</label>
                 <input type="date" name="data_nascimento" class="form-control">
             </div>

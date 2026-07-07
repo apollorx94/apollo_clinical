@@ -243,7 +243,7 @@ CREATE TABLE public.audit_log (
 | Lógica de cadastro | `cadastrarPaciente.php` | ✅ |
 | Listagem | `form-listar-pacientes.php` | ✅ |
 | Formulário de edição (pré-preenchido) | `form-alterar-pacientes.php` | ✅ |
-| Lógica de edição | `editarPaciente.php` | 🔄 em construção |
+| Lógica de edição | `editarPaciente.php` | ✅ |
 | Exclusão | `excluirPaciente.php` | ✅ |
 
 **Detalhes técnicos do módulo:**

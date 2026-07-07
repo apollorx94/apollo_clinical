@@ -33,7 +33,13 @@ $pacientes = $dadosPacientes->fetchAll();
 
     <div class="container mt-4">
 
-        <?php if (isset($_GET['sucesso']) && $_GET['sucesso'] == 'paciente-removido') :?>
+        <?php if (isset($_GET['sucesso']) && $_GET['sucesso'] == 'paciente-atualizado') : ?>
+        <div class="alert alert-success">
+            <i class="bi bi-check-circle-fill"></i> Paciente atualizado com sucesso.
+        </div>
+        <?php endif; ?>
+
+        <?php if (isset($_GET['sucesso']) && $_GET['sucesso'] == 'paciente-removido') : ?>
         <div class="alert alert-success">
             <i class="bi bi-check-circle-fill"></i> Paciente Removido.
         </div>
@@ -74,9 +80,9 @@ $pacientes = $dadosPacientes->fetchAll();
                     <td><?php echo $paciente['data_nascimento']; ?></td>
                     <td><?php echo $paciente['convenio_nome']; ?></td>
                     <td>
-                        <a href="form-alterar-pacientes.php?id=<?php echo $paciente['id'];?>"
+                        <a href="form-alterar-pacientes.php?id=<?php echo $paciente['id']; ?>"
                             class="btn btn-warning btn-sm">Alterar</a>
-                        <a href="excluirPaciente.php?id=<?php echo $paciente['id'];?>"
+                        <a href="excluirPaciente.php?id=<?php echo $paciente['id']; ?>"
                             class=" btn btn-danger btn-sm">Excluir</a>
                     </td>
                 </tr>
