@@ -257,7 +257,7 @@ CREATE TABLE public.audit_log (
 
 ### Em desenvolvimento
 
-- [ ] Finalização do `editarPaciente.php` (2 UPDATEs: `pessoas` + `pacientes`)
+- [✅] Finalização do `editarPaciente.php` (2 UPDATEs: `pessoas` + `pacientes`)
 - [ ] Módulo de Profissionais (com especialidades N:N)
 - [ ] Módulo de Convênios e Serviços
 - [ ] Módulo de Agendamentos
