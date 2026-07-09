@@ -68,8 +68,10 @@ $convenios = $dadosConvenio->fetchAll();
                     <td>
                         <a href="form-alterar-convenio.php?id=<?php echo $convenio['id']; ?>"
                             class="btn btn-warning btn-sm">Alterar</a>
-                        <a href="excluirConvenio.php?id=<?php echo $convenio['id']; ?>"
-                            class=" btn btn-danger btn-sm">Excluir</a>
+                        <a href="ativarConvenio.php?id=<?php echo $convenio['id']; ?>"
+                            class=" btn btn-success btn-sm">Ativar</a>
+                        <a href="desativarConvenio.php?id=<?php echo $convenio['id']; ?>"
+                            class=" btn btn-danger btn-sm">Desativar</a>
                     </td>
                 </tr>
                 <?php endforeach;?>
