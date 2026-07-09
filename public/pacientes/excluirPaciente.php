@@ -22,4 +22,5 @@ try {
     header('Location: form-listar-pacientes.php?erro=impossivel-remover');
     exit;
     
+    
 }

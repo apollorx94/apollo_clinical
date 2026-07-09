@@ -1,11 +1,11 @@
-<?php 
+<?php
 
 require '../../config/conexaoBanco.php';
 
 $idConvenio = $_GET['id'];
 
 try {
-    
+
     $alterarConvenio = $conexao->prepare("SELECT
         nome,
         codigo,
@@ -13,13 +13,13 @@ try {
     FROM convenios 
     WHERE id = :id;");
 
+
+
     $alterarConvenio->bindValue(':id', $idConvenio);
     $alterarConvenio->execute();
 
     $convenios = $alterarConvenio->fetch();
-
-}
-    catch (PDOException $erro) {
+} catch (PDOException $erro) {
     error_log('Erro ao buscar convenio: ' . $erro->getMessage());
     die('Erro ao carregar dados do Convenio.');
 }
@@ -44,17 +44,17 @@ try {
     <div class="container mt-4">
 
 
-        <?php if (isset($_GET['status']) && $_GET['status'] == 'sucesso'):?>
-        <div class="alert alert-success">
-            <i class="bi bi-check-circle"></i> Convenio atualizado com sucesso!
-        </div>
-        <?php endif;?>
+        <?php if (isset($_GET['status']) && $_GET['status'] == 'sucesso'): ?>
+            <div class="alert alert-success">
+                <i class="bi bi-check-circle"></i> Convenio atualizado com sucesso!
+            </div>
+        <?php endif; ?>
 
-        <?php if (isset($_GET['status']) && $_GET['status'] == 'duplicado'):?>
-        <div class="alert alert-danger">
-            <i class="bi bi-exclamation-triangle"></i> Este codigo ja esta em uso!
-        </div>
-        <?php endif;?>
+        <?php if (isset($_GET['status']) && $_GET['status'] == 'duplicado'): ?>
+            <div class="alert alert-danger">
+                <i class="bi bi-exclamation-triangle"></i> Este codigo ja esta em uso!
+            </div>
+        <?php endif; ?>
 
         <div class="mb-4">
             <h2 class="fw-bold"><i class="bi bi-bandaid"></i> Editar Convênio</h2>
@@ -66,11 +66,11 @@ try {
         <form action="editarConvenio.php" method="post">
             <div class="mb-3">
                 <label class="form-label">Nome:</label>
-                <input type="text" name="nome" value="<?php echo $convenios['nome'];?>" class="form-control">
+                <input type="text" name="nome" value="<?php echo $convenios['nome']; ?>" class="form-control">
             </div>
             <div class="mb-3">
                 <label class="form-label">Codigo:</label>
-                <input type="text" name="codigo" value="<?php echo $convenios['codigo'];?>" class="form-control">
+                <input type="text" name="codigo" value="<?php echo $convenios['codigo']; ?>" class="form-control">
             </div>
             <div class="mb-3">
                 <label class="form-label">Status Convenio:</label>
