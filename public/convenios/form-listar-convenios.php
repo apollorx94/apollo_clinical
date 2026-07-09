@@ -4,7 +4,7 @@ require '../../config/conexaoBanco.php';
 $dadosConvenio = $conexao->query("
     SELECT
         id, nome, codigo, ativo 
-    FROM convenios
+    FROM convenios ORDER BY id
 ");
 
 $convenios = $dadosConvenio->fetchAll();
@@ -26,7 +26,6 @@ $convenios = $dadosConvenio->fetchAll();
     </script>
     <div class="container mt-4">
 
-
         <?php if (isset($_GET['sucesso']) && $_GET['sucesso'] == 'convenio-atualizado') : ?>
         <div class="alert alert-success">
             <i class="bi bi-check-circle-fill"></i> Convênio atualizado com sucesso.
@@ -40,12 +39,6 @@ $convenios = $dadosConvenio->fetchAll();
         <?php endif; ?>
 
         <?php if (isset($_GET['erro']) && $_GET['erro'] == 'impossivel-remover') : ?>
-        <div class="alert alert-danger">
-            <i class="bi bi-exclamation-triangle-fill"></i> Não foi possível remover o Convênio.
-        </div>
-        <?php endif; ?>
-
-        <?php if (isset($_GET['erro']) && $_GET['erro'] == 'vinculo-existente') : ?>
         <div class="alert alert-danger">
             <i class="bi bi-exclamation-triangle-fill"></i> Não foi possível remover: Convênio possui vínculos no
             sistema.
